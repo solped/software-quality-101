@@ -6,9 +6,8 @@ This workshop is designed to help you start or improve
 your [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development)
 skills.
 
-The [examples](../tdd) you will see in this workshop are designed to demonstrate the advantages and technicalities of
-TDD. The intention is to represent real-world scenarios, however sometimes that will not be possible in favour of
-simplicity.
+The [TDD](../tdd) you will see in this workshop are designed to demonstrate the advantages and technicalities of TDD.
+The intention is to represent real-world scenarios, however sometimes that will not be possible in favour of simplicity.
 
 ---
 
