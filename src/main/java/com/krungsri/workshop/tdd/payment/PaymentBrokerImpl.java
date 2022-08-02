@@ -11,7 +11,7 @@ public class PaymentBrokerImpl implements PaymentBroker {
 
     @Override
     public boolean pay(int amount) throws InsufficientFundsException, ProviderNotAvailableException {
-        if (wallet.getBalance() <= 0) {
+        if (wallet.getBalance() < amount) {
             throw new InsufficientFundsException();
         }
         if (!provider.isAvailable()) {
