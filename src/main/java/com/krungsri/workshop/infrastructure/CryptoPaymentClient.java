@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 
 @Log
 @Component
-public class PayPalRefundClient implements RefundClient {
+public class CryptoPaymentClient implements PaymentProvider {
     @Override
-    public void processRefund(Transaction transaction) {
-        log.info("Processing PayPal card refund for amount: " + transaction.getAmount());
+    public void processPayment(Transaction transaction) {
+        log.info("Processing Crypto payment for amount: " + transaction.getAmount());
     }
 }

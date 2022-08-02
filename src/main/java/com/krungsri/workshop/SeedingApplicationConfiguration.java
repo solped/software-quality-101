@@ -12,6 +12,6 @@ public class SeedingApplicationConfiguration {
 
     @Bean
     List<Transaction> initialTransaction() {
-        return TransactionGenerator.generate(10);
+        return TransactionGenerator.generate(5);
     }
 }

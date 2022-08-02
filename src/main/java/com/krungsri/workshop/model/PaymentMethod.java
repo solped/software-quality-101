@@ -1,5 +1,5 @@
 package com.krungsri.workshop.model;
 
 public enum PaymentMethod {
-    CREDIT_CARD, PAYPAL, PLAN
+    CREDIT_CARD, PAYPAL, CRYPTO
 }

@@ -1,8 +1,12 @@
 package com.krungsri.workshop.controller;
 
-import com.krungsri.workshop.model.ProcessedTransactionResult;
+import com.krungsri.workshop.exception.InvalidPaymentMethod;
+import com.krungsri.workshop.exception.InvalidTransactionType;
+import com.krungsri.workshop.exception.NoTransactionProvided;
 import com.krungsri.workshop.model.Transaction;
 import com.krungsri.workshop.repository.TransactionRepository;
+import com.krungsri.workshop.service.TransactionService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,10 +19,12 @@ import java.util.stream.Collectors;
 @RestController
 public class PaymentTransactionController {
 
-    final TransactionRepository transactionRepository;
+    private final TransactionRepository transactionRepository;
+    private final TransactionService transactionService;
 
-    public PaymentTransactionController(TransactionRepository transactionRepository) {
+    public PaymentTransactionController(TransactionRepository transactionRepository, TransactionService transactionService) {
         this.transactionRepository = transactionRepository;
+        this.transactionService = transactionService;
     }
 
     @GetMapping(value = "/transactions")
@@ -28,13 +34,10 @@ public class PaymentTransactionController {
                 .collect(Collectors.toList());
     }
 
-    // TODO: Complete this endpoint
     @PostMapping(value = "/transactions")
-    public ProcessedTransactionResult processTransactions(@RequestBody List<Transaction> transactions) {
-        return ProcessedTransactionResult.builder()
-                .paypal(100.25)
-                .creditCard(213.32)
-                .plan(387.65)
-                .build();
+    public ResponseEntity<Object> processTransactions(@RequestBody List<Transaction> transactions) throws NoTransactionProvided, InvalidPaymentMethod, InvalidTransactionType {
+        // TODO: Complete this processTransaction
+        transactionService.processTransaction(transactions);
+        return ResponseEntity.ok().build();
     }
 }

@@ -1,5 +1,5 @@
 package com.krungsri.workshop.model;
 
 public enum PaymentType {
-    PAYMENT, REFUND
+    PAYMENT, REFUND, INVALID
 }
