@@ -1,6 +1,5 @@
 package com.krungsri.workshop.tdd.string;
 
-import java.util.ArrayList;
 
 public class StringProcessorImpl implements StringProcessor {
     @Override
