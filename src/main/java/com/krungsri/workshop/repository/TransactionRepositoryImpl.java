@@ -2,14 +2,27 @@ package com.krungsri.workshop.repository;
 
 import com.krungsri.workshop.model.Transaction;
 import com.krungsri.workshop.util.TransactionGenerator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
 public class TransactionRepositoryImpl implements TransactionRepository {
+
+    final List<Transaction> transactions;
+
+    public TransactionRepositoryImpl(List<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
     @Override
     public List<Transaction> getAll() {
-        return TransactionGenerator.generate(10);
+        return this.transactions;
+    }
+
+    @Override
+    public void save(List<Transaction> transactions) {
+        this.transactions.addAll(transactions);
     }
 }

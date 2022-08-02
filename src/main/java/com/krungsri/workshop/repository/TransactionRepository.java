@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface TransactionRepository {
     List<Transaction> getAll();
+
+    void save(List<Transaction> transactions);
 }
