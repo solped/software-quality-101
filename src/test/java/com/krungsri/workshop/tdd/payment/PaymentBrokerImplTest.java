@@ -1,6 +1,7 @@
 package com.krungsri.workshop.tdd.payment;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -67,22 +68,22 @@ class PaymentBrokerImplTest {
     }
 
     // =============== mock vs spy ================== //
-    @Test
-    public void whenCreateMock_thenCreated() {
-        List mockedList = mock(ArrayList.class);
-        mockedList.add("one");
-
-        verify(mockedList).add("one");
-        assertEquals(0, mockedList.size());
-    }
-
-    @Test
-    public void whenCreateSpy_thenCreate() {
-        List spyList = spy(new ArrayList());
-        spyList.add("one");
-        verify(spyList).add("one");
-
-        assertEquals(1, spyList.size());
-    }
+//    @Test
+//    public void whenCreateMock_thenCreated() {
+//        List mockedList = mock(ArrayList.class);
+//        mockedList.add("one");
+//
+//        verify(mockedList).add("one");
+//        assertEquals(0, mockedList.size());
+//    }
+//
+//    @Test
+//    public void whenCreateSpy_thenCreate() {
+//        List spyList = spy(new ArrayList());
+//        spyList.add("one");
+//        verify(spyList).add("one");
+//
+//        assertEquals(1, spyList.size());
+//    }
 
 }
