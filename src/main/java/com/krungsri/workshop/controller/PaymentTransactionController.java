@@ -20,8 +20,8 @@ public class PaymentTransactionController {
 
     @GetMapping(value = "/transactions")
     public List<Transaction> getAllTransactions() {
-        return transactionRepository.getAll()
-                .stream().sorted(Comparator.comparing(Transaction::getId, Integer::compareTo))
+        return transactionRepository.getAll().stream()
+                .sorted(Comparator.comparing(Transaction::getId, Integer::compareTo))
                 .collect(Collectors.toList());
     }
 }
