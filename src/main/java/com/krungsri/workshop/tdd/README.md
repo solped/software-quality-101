@@ -26,3 +26,20 @@ This process uses the **red/green/refactor** pattern and consists of the followi
 3. Write Code
 4. Run Tests (should pass - Green) 🟢
 5. Refactor 🔵
+
+---
+
+## Test Doubles
+
+A Test Double is an object that can stand-in for a real object in a test, similar to how a stunt double stands in for an
+actor in a movie.
+
+### The five types of Test Doubles are
+
+![five types of Test Doubles](../../../../../resources/static/test-double.png)
+
+- `Dummy`: It is used as a placeholder when an argument needs to be filled in.
+- `Stub`: It provides fake data to the SUT (System Under Test).
+- `Spy`: It records information about how the class is being used.
+- `Mock`: It defines an expectation of how it will be used. It will cause a failure if the expectation isn’t met.
+- `Fake`: It is an actual implementation of the contract but is unsuitable for production.
