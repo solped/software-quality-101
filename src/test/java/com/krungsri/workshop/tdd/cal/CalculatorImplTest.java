@@ -3,7 +3,7 @@ package com.krungsri.workshop.tdd.cal;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class CalculatorTest {
+class CalculatorImplTest {
 
     @Test
     void givenBothNumberArePositive_whenCallSum_thenShouldReturnPositive() {
@@ -12,7 +12,7 @@ class CalculatorTest {
         Integer number2 = 2;
 
         //when
-        Integer actualResult = new Calculator().sum(number1, number2);
+        Integer actualResult = new CalculatorImpl().sum(number1, number2);
 
         //then
         Assertions.assertTrue(actualResult > 0);
@@ -26,7 +26,7 @@ class CalculatorTest {
         Integer number2 = -3;
 
         //when
-        Integer actualResult = new Calculator().sum(number1, number2);
+        Integer actualResult = new CalculatorImpl().sum(number1, number2);
 
         //then
         Assertions.assertTrue(actualResult < 0);
@@ -40,7 +40,7 @@ class CalculatorTest {
         Integer number2 = -5;
 
         //when
-        Integer actualResult = new Calculator().sum(number1, number2);
+        Integer actualResult = new CalculatorImpl().sum(number1, number2);
 
         //then
         Assertions.assertEquals(0, actualResult);
