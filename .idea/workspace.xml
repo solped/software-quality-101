@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82d0fd61-1c82-4f8a-bc22-01868b631568" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krungsri/workshop/tdd/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krungsri/workshop/tdd/cal/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krungsri/workshop/tdd/cal/ICalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krungsri/workshop/tdd/cal/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/krungsri/workshop/tdd/cal/CalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +25,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="worasit &lt;worasit.dmk501@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -57,6 +58,8 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="TF_FMT" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -166,11 +169,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1659410897198</updated>
-      <workItem from="1659410899263" duration="3626000" />
+      <workItem from="1659410899263" duration="3832000" />
     </task>
+    <task id="LOCAL-00001" summary="Added calculator example">
+      <created>1659415672265</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1659415672265</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added calculator example" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added calculator example" />
   </component>
 </project>
