@@ -4,7 +4,7 @@
 
 ### Tasks
 
-Implements a string processor that allows to do `countVowels` operations with strings.
+Implements a [string processor](../string) that allows to do `countVowels` operations with strings.
 
 ---
 

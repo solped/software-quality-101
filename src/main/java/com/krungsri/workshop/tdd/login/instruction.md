@@ -4,7 +4,7 @@
 
 ### Tasks
 
-Implements a login manager that allows to do `login` operations by username and password.
+Implements a [login manager](../login) that allows to do `login` operations by username and password.
 
 ---
 
