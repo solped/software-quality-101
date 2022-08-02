@@ -1,4 +1,4 @@
 package com.krungsri.workshop.processor;
 
-public interface Processor {
+public interface TransactionProcessor {
 }
