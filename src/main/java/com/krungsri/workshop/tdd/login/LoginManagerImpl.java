@@ -15,6 +15,17 @@ public class LoginManagerImpl implements LoginManager {
     @Override
 
     public Boolean login(String username, String password) throws InvalidCredentialException, EmptyPasswordException {
-      throw new NotImplementedException();
+        if (password.isEmpty()) {
+            throw new EmptyPasswordException();
+        }
+        if (!isUsernameValid(username) || !this.userRepository.get(username).equals(password)) {
+            throw new InvalidCredentialException();
+        }
+        return true;
+    }
+
+    private boolean isUsernameValid(String username) {
+        return this.userRepository.containsKey(username);
+
     }
 }
