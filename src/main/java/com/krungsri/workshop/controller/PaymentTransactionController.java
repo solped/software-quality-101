@@ -1,7 +1,7 @@
 package com.krungsri.workshop.controller;
 
-import com.krungsri.workshop.exception.InvalidPaymentMethod;
-import com.krungsri.workshop.exception.InvalidTransactionType;
+import com.krungsri.workshop.exception.InvalidTransactionPaymentMethod;
+import com.krungsri.workshop.exception.InvalidTransactionPaymentType;
 import com.krungsri.workshop.exception.NoTransactionProvided;
 import com.krungsri.workshop.model.Transaction;
 import com.krungsri.workshop.repository.TransactionRepository;
@@ -35,8 +35,8 @@ public class PaymentTransactionController {
     }
 
     @PostMapping(value = "/transactions")
-    public ResponseEntity<Object> processTransactions(@RequestBody List<Transaction> transactions) throws NoTransactionProvided, InvalidPaymentMethod, InvalidTransactionType {
-        // TODO: Complete this processTransaction
+    public ResponseEntity<Object> processTransactions(@RequestBody List<Transaction> transactions) throws NoTransactionProvided, InvalidTransactionPaymentMethod, InvalidTransactionPaymentType {
+        // TODO: Complete this processTransaction, please follow the instruction
         transactionService.processTransaction(transactions);
         return ResponseEntity.ok().build();
     }

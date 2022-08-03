@@ -1,7 +1,7 @@
 package com.krungsri.workshop.service;
 
-import com.krungsri.workshop.exception.InvalidPaymentMethod;
-import com.krungsri.workshop.exception.InvalidTransactionType;
+import com.krungsri.workshop.exception.InvalidTransactionPaymentMethod;
+import com.krungsri.workshop.exception.InvalidTransactionPaymentType;
 import com.krungsri.workshop.exception.NoTransactionProvided;
 import com.krungsri.workshop.infrastructure.*;
 import com.krungsri.workshop.model.*;
@@ -27,7 +27,7 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public void processTransaction(List<Transaction> transactions) throws NoTransactionProvided, InvalidTransactionType, InvalidPaymentMethod {
+    public void processTransaction(List<Transaction> transactions) throws NoTransactionProvided, InvalidTransactionPaymentType, InvalidTransactionPaymentMethod {
         if (transactions != null && transactions.size() > 0) {
             for (Transaction transaction : transactions) {
                 if (transaction.getType() == PaymentType.PAYMENT) {
@@ -39,7 +39,7 @@ public class TransactionServiceImpl implements TransactionService {
                         } else if (transaction.getMethod() == PaymentMethod.CRYPTO) {
                             this.cryptoPaymentClient.processPayment(transaction);
                         } else {
-                            throw new InvalidPaymentMethod();
+                            throw new InvalidTransactionPaymentMethod();
                         }
                     } else {
                         log.info("Transaction " + transaction.getId() + " was closed");
@@ -53,13 +53,13 @@ public class TransactionServiceImpl implements TransactionService {
                         } else if (transaction.getMethod() == PaymentMethod.CRYPTO) {
                             this.cryptoPaymentClient.processPayment(transaction);
                         } else {
-                            throw new InvalidPaymentMethod();
+                            throw new InvalidTransactionPaymentMethod();
                         }
                     } else {
                         log.info("Transaction " + transaction.getId() + " was closed");
                     }
                 } else {
-                    throw new InvalidTransactionType();
+                    throw new InvalidTransactionPaymentType();
                 }
             }
         } else {
