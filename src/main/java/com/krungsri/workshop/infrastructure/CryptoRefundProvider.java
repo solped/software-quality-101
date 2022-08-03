@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CryptoRefundProvider implements RefundProvider {
     @Override
-    public void processRefund(Transaction transaction) {
+    public void process(Transaction transaction) {
         log.info("Processing Crypto Refund for amount: " + transaction.getAmount());
     }
 }

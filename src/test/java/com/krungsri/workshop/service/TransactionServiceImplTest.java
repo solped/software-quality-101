@@ -18,51 +18,6 @@ import static org.mockito.Mockito.*;
 class TransactionServiceImplTest {
 
     @Test
-    void givenValidTransaction_whenProcessTransaction_thenProcessPaymentCorrectly() throws NoTransactionProvided, InvalidTransactionPaymentType, InvalidTransactionPaymentMethod {
-        // given
-        ArrayList<Transaction> transactions = new ArrayList<>();
-        Transaction paypalPaymentTransaction = Transaction.builder()
-                .id(1)
-                .status(TransactionStatus.OPEN)
-                .type(PaymentType.PAYMENT)
-                .method(PaymentMethod.PAYPAL)
-                .amount(100.00)
-                .build();
-        Transaction paypalRefundTransaction = Transaction.builder()
-                .id(1)
-                .status(TransactionStatus.OPEN)
-                .type(PaymentType.REFUND)
-                .method(PaymentMethod.PAYPAL)
-                .amount(200.00)
-                .build();
-
-        transactions.add(paypalPaymentTransaction);
-        transactions.add(paypalRefundTransaction);
-
-        CreditCardPaymentProvider creditCardPaymentProvider = spy(new CreditCardPaymentProvider());
-        PaypalPaymentProvider paypalPaymentProvider = spy(new PaypalPaymentProvider());
-        CryptoPaymentProvider cryptoPaymentProvider = spy(new CryptoPaymentProvider());
-        CreditCardRefundProvider creditCardRefundProvider = spy(new CreditCardRefundProvider());
-        PaypalRefundProvider paypalRefundProvider = spy(new PaypalRefundProvider());
-        CryptoRefundProvider cryptoRefundProvider = spy(new CryptoRefundProvider());
-        TransactionServiceImpl transactionService = new TransactionServiceImpl(
-                creditCardPaymentProvider,
-                paypalPaymentProvider,
-                cryptoPaymentProvider,
-                creditCardRefundProvider,
-                paypalRefundProvider,
-                cryptoRefundProvider
-        );
-
-        // when
-        transactionService.processTransaction(transactions);
-
-        // then
-        verify(paypalPaymentProvider, times(1)).processPayment(paypalPaymentTransaction);
-        verify(paypalRefundProvider, times(1)).processRefund(paypalRefundTransaction);
-    }
-
-    @Test
     void givenEmptyTransactions_whenProcessTransaction_thenThrowNoTransactionProvided() throws NoTransactionProvided, InvalidTransactionPaymentType, InvalidTransactionPaymentMethod {
         // given
         ArrayList<Transaction> emptyTransactions = new ArrayList<>();

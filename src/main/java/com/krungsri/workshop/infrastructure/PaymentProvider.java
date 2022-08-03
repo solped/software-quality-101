@@ -1,8 +1,8 @@
 package com.krungsri.workshop.infrastructure;
 
 
-import com.krungsri.workshop.model.Transaction;
+import com.krungsri.workshop.processor.TransactionProcessor;
 
-public interface PaymentProvider {
-    void processPayment(Transaction transaction);
+public interface PaymentProvider extends TransactionProcessor {
+
 }

@@ -43,11 +43,11 @@ public class TransactionServiceImpl implements TransactionService {
                 if (transaction.getType() == PaymentType.PAYMENT) {
                     if (transaction.getStatus() == TransactionStatus.OPEN) {
                         if (transaction.getMethod() == PaymentMethod.CREDIT_CARD) {
-                            this.creditCardPaymentProvider.processPayment(transaction);
+                            this.creditCardPaymentProvider.process(transaction);
                         } else if (transaction.getMethod() == PaymentMethod.PAYPAL) {
-                            this.paypalPaymentProvider.processPayment(transaction);
+                            this.paypalPaymentProvider.process(transaction);
                         } else if (transaction.getMethod() == PaymentMethod.CRYPTO) {
-                            this.cryptoPaymentProvider.processPayment(transaction);
+                            this.cryptoPaymentProvider.process(transaction);
                         } else {
                             throw new InvalidTransactionPaymentMethod();
                         }
@@ -57,11 +57,11 @@ public class TransactionServiceImpl implements TransactionService {
                 } else if (transaction.getType() == PaymentType.REFUND) {
                     if (transaction.getStatus() == TransactionStatus.OPEN) {
                         if (transaction.getMethod() == PaymentMethod.CREDIT_CARD) {
-                            this.creditCardRefundProvider.processRefund(transaction);
+                            this.creditCardRefundProvider.process(transaction);
                         } else if (transaction.getMethod() == PaymentMethod.PAYPAL) {
-                            this.paypalRefundProvider.processRefund(transaction);
+                            this.paypalRefundProvider.process(transaction);
                         } else if (transaction.getMethod() == PaymentMethod.CRYPTO) {
-                            this.cryptoRefundProvider.processRefund(transaction);
+                            this.cryptoRefundProvider.process(transaction);
                         } else {
                             throw new InvalidTransactionPaymentMethod();
                         }

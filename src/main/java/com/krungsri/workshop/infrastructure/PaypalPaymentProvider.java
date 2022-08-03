@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PaypalPaymentProvider implements PaymentProvider {
     @Override
-    public void processPayment(Transaction transaction) {
+    public void process(Transaction transaction) {
         log.info("Processing Paypal Payment for amount: " + transaction.getAmount());
     }
 }

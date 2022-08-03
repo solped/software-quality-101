@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CreditCardRefundProvider implements RefundProvider {
     @Override
-    public void processRefund(Transaction transaction) {
+    public void process(Transaction transaction) {
         log.info("Processing Credit Card Refund for amount: " + transaction.getAmount());
     }
 }

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CryptoPaymentProvider implements PaymentProvider {
     @Override
-    public void processPayment(Transaction transaction) {
+    public void process(Transaction transaction) {
         log.info("Processing Crypto" + transaction.getType().toString() + " for amount: " + transaction.getAmount());
     }
 }
