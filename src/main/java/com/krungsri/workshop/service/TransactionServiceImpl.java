@@ -16,11 +16,11 @@ public class TransactionServiceImpl implements TransactionService {
 
     private final CreditCardPaymentProvider creditCardPaymentClient;
     private final PaypalPaymentProvider paypalPaymentClient;
-    private final CryptoPaymentClient cryptoPaymentClient;
+    private final CryptoPaymentProvider cryptoPaymentClient;
 
     public TransactionServiceImpl(CreditCardPaymentProvider creditCardPaymentClient,
                                   PaypalPaymentProvider paypalPaymentClient,
-                                  CryptoPaymentClient cryptoPaymentClient) {
+                                  CryptoPaymentProvider cryptoPaymentClient) {
         this.creditCardPaymentClient = creditCardPaymentClient;
         this.paypalPaymentClient = paypalPaymentClient;
         this.cryptoPaymentClient = cryptoPaymentClient;
