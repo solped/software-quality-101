@@ -6,13 +6,3 @@ public interface TransactionProcessor {
     void process(Transaction transaction);
 }
 
-
-//TransactionProcessor
-//   -> Payment
-//        -> Credit
-//        -> Paypal
-//   -> Refund
-//        -> Credit
-//        -> Paypal
-
-
