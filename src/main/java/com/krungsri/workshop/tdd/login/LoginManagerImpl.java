@@ -1,7 +1,5 @@
 package com.krungsri.workshop.tdd.login;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.Map;
 
 public class LoginManagerImpl implements LoginManager {

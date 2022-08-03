@@ -1,8 +1,6 @@
 package com.krungsri.workshop.repository;
 
 import com.krungsri.workshop.model.Transaction;
-import com.krungsri.workshop.util.TransactionGenerator;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

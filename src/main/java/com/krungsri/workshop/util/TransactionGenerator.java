@@ -15,6 +15,9 @@ public class TransactionGenerator {
 
     private static final SecureRandom random = new SecureRandom();
 
+    private TransactionGenerator() {
+    }
+
     public static List<Transaction> generate(int n) {
         return IntStream.range(0, n)
                 .mapToObj(i -> buildRandomizedTransaction())

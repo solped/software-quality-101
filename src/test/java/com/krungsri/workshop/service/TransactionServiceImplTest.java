@@ -3,7 +3,7 @@ package com.krungsri.workshop.service;
 import com.krungsri.workshop.exception.InvalidTransactionPaymentMethod;
 import com.krungsri.workshop.exception.InvalidTransactionPaymentType;
 import com.krungsri.workshop.exception.NoTransactionProvided;
-import com.krungsri.workshop.infrastructure.*;
+import com.krungsri.workshop.factory.TransactionProcessorAbstractFactory;
 import com.krungsri.workshop.model.PaymentMethod;
 import com.krungsri.workshop.model.PaymentType;
 import com.krungsri.workshop.model.Transaction;
@@ -13,29 +13,14 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static org.mockito.Mockito.*;
-
 class TransactionServiceImplTest {
 
     @Test
     void givenEmptyTransactions_whenProcessTransaction_thenThrowNoTransactionProvided() throws NoTransactionProvided, InvalidTransactionPaymentType, InvalidTransactionPaymentMethod {
         // given
         ArrayList<Transaction> emptyTransactions = new ArrayList<>();
-
-        CreditCardPaymentProvider creditCardPaymentProvider = spy(new CreditCardPaymentProvider());
-        PaypalPaymentProvider paypalPaymentProvider = spy(new PaypalPaymentProvider());
-        CryptoPaymentProvider cryptoPaymentProvider = spy(new CryptoPaymentProvider());
-        CreditCardRefundProvider creditCardRefundProvider = spy(new CreditCardRefundProvider());
-        PaypalRefundProvider paypalRefundProvider = spy(new PaypalRefundProvider());
-        CryptoRefundProvider cryptoRefundProvider = spy(new CryptoRefundProvider());
-        TransactionServiceImpl transactionService = new TransactionServiceImpl(
-                creditCardPaymentProvider,
-                paypalPaymentProvider,
-                cryptoPaymentProvider,
-                creditCardRefundProvider,
-                paypalRefundProvider,
-                cryptoRefundProvider
-        );
+        TransactionProcessorAbstractFactory transactionProcessorFactory = new TransactionProcessorAbstractFactory();
+        TransactionServiceImpl transactionService = new TransactionServiceImpl(transactionProcessorFactory);
 
         // when & then
         Assertions.assertThrows(NoTransactionProvided.class,
@@ -55,20 +40,8 @@ class TransactionServiceImplTest {
                 .build();
         transactions.add(paypalRefundTransaction);
 
-        CreditCardPaymentProvider creditCardPaymentProvider = spy(new CreditCardPaymentProvider());
-        PaypalPaymentProvider paypalPaymentProvider = spy(new PaypalPaymentProvider());
-        CryptoPaymentProvider cryptoPaymentProvider = spy(new CryptoPaymentProvider());
-        CreditCardRefundProvider creditCardRefundProvider = spy(new CreditCardRefundProvider());
-        PaypalRefundProvider paypalRefundProvider = spy(new PaypalRefundProvider());
-        CryptoRefundProvider cryptoRefundProvider = spy(new CryptoRefundProvider());
-        TransactionServiceImpl transactionService = new TransactionServiceImpl(
-                creditCardPaymentProvider,
-                paypalPaymentProvider,
-                cryptoPaymentProvider,
-                creditCardRefundProvider,
-                paypalRefundProvider,
-                cryptoRefundProvider
-        );
+        TransactionProcessorAbstractFactory transactionProcessorFactory = new TransactionProcessorAbstractFactory();
+        TransactionServiceImpl transactionService = new TransactionServiceImpl(transactionProcessorFactory);
 
         // when & then
         Assertions.assertThrows(InvalidTransactionPaymentType.class,
@@ -88,20 +61,8 @@ class TransactionServiceImplTest {
                 .build();
         transactions.add(paypalRefundTransaction);
 
-        CreditCardPaymentProvider creditCardPaymentProvider = spy(new CreditCardPaymentProvider());
-        PaypalPaymentProvider paypalPaymentProvider = spy(new PaypalPaymentProvider());
-        CryptoPaymentProvider cryptoPaymentProvider = spy(new CryptoPaymentProvider());
-        CreditCardRefundProvider creditCardRefundProvider = spy(new CreditCardRefundProvider());
-        PaypalRefundProvider paypalRefundProvider = spy(new PaypalRefundProvider());
-        CryptoRefundProvider cryptoRefundProvider = spy(new CryptoRefundProvider());
-        TransactionServiceImpl transactionService = new TransactionServiceImpl(
-                creditCardPaymentProvider,
-                paypalPaymentProvider,
-                cryptoPaymentProvider,
-                creditCardRefundProvider,
-                paypalRefundProvider,
-                cryptoRefundProvider
-        );
+        TransactionProcessorAbstractFactory transactionProcessorFactory = new TransactionProcessorAbstractFactory();
+        TransactionServiceImpl transactionService = new TransactionServiceImpl(transactionProcessorFactory);
 
         // when & then
         Assertions.assertThrows(InvalidTransactionPaymentMethod.class,

@@ -36,7 +36,6 @@ public class PaymentTransactionController {
 
     @PostMapping(value = "/transactions")
     public ResponseEntity<Object> processTransactions(@RequestBody List<Transaction> transactions) throws NoTransactionProvided, InvalidTransactionPaymentMethod, InvalidTransactionPaymentType {
-        // TODO: Complete this processTransaction, please follow the instruction
         transactionService.processTransaction(transactions);
         return ResponseEntity.ok().build();
     }
