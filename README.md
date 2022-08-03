@@ -37,6 +37,14 @@ mock or stub external dependencies
 
 ---
 
+## Workshop 3 - Code Refactoring
+
+This workshop applies all the concept we have learnt about TDD, Clean-code, Test Double and Code Refactoring. You will practice refactoring an existing API endpoint
+
+- [Payment Broker](./src/main/java/com/krungsri/workshop/tdd/payment/instruction.md)
+
+---
+
 ## Useful commands
 
 Start the Web application
