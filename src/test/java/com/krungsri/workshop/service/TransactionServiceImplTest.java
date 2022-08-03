@@ -54,5 +54,6 @@ class TransactionServiceImplTest {
 
         // then
         verify(paypalPaymentProvider, times(1)).processPayment(paypalPaymentTransaction);
+        verify(paypalPaymentProvider, times(1)).processPayment(paypalRefundTransaction);
     }
 }
