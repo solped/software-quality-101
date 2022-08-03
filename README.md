@@ -2,7 +2,7 @@
 
 ---
 
-This workshop aims to improve and develop software quality mindset, there are 3 hands-on workshops which teach you
+This [workshop](./src/main/java/com/krungsri/workshop/tdd) aims to improve and develop software quality mindset, there are 3 hands-on workshops which teach you
 
 - Test-Driven Development (TDD)
 - [Clean-code](./src/main/resources/static/clean-code-checklist.pdf)
