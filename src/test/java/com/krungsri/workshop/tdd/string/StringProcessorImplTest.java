@@ -33,36 +33,17 @@ class StringProcessorImplTest {
     @ParameterizedTest
     @MethodSource("dataProviderStringsWithVowels")
     void givenVowelsExist_whenCountVowels_thenReturnNumberOfVowels(String message, int expectedCount) throws EmptyStringException {
-        // given
-        StringProcessorImpl stringProcessor = new StringProcessorImpl();
 
-        // when
-        Integer actualCount = stringProcessor.countVowels(message);
-
-        // then
-        Assertions.assertEquals(expectedCount, actualCount);
     }
 
     @ParameterizedTest
     @MethodSource("dataProviderStringsWithoutVowels")
     void givenVowelsDontExist_whenCountVowels_thenReturnNumberZero(String message) throws EmptyStringException {
-        // given
-        StringProcessorImpl stringProcessor = new StringProcessorImpl();
 
-        // when
-        Integer actualCount = stringProcessor.countVowels(message);
-
-        // then
-        Assertions.assertEquals(0, actualCount);
     }
 
     @Test
     void givenStringIsEmpty_whenCountVowels_thenReturnEmptyStringException() {
-        // given
-        String emptyMessage = "";
-        StringProcessorImpl stringProcessor = new StringProcessorImpl();
 
-        // when & then
-        Assertions.assertThrows(EmptyStringException.class, () -> stringProcessor.countVowels(emptyMessage));
     }
 }

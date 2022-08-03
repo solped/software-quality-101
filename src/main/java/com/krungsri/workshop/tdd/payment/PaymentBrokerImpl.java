@@ -1,5 +1,7 @@
 package com.krungsri.workshop.tdd.payment;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 public class PaymentBrokerImpl implements PaymentBroker {
     private final WalletInterface wallet;
     private final PaymentProviderInterface provider;
@@ -10,13 +12,7 @@ public class PaymentBrokerImpl implements PaymentBroker {
     }
 
     @Override
-    public boolean pay(int amount) throws InsufficientFundsException, ProviderNotAvailableException {
-        if (wallet.getBalance() < amount) {
-            throw new InsufficientFundsException();
-        }
-        if (!provider.isAvailable()) {
-            throw new ProviderNotAvailableException();
-        }
-        return provider.deposit(wallet.getId(), amount);
+    public boolean pay(int amount) {
+       throw new NotImplementedException();
     }
 }
