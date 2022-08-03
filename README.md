@@ -41,7 +41,7 @@ mock or stub external dependencies
 
 This workshop applies all the concept we have learnt about TDD, Clean-code, Test Double and Code Refactoring. You will practice refactoring an existing API endpoint
 
-- [Transaction Processing API](./src/main/java/com/krungsri/workshop/tdd/payment/instruction.md)
+- [Transaction Processing API](./src/main/java/com/krungsri/workshop/instruction.md)
 
 ---
 
