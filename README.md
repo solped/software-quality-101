@@ -2,7 +2,7 @@
 
 ---
 
-This workshop aims to improve and develop software quality mindset, there are 3 hands-on workshops which teach you
+This [workshop](./src/main/java/com/krungsri/workshop/tdd/README.md) aims to improve and develop software quality mindset, there are 3 hands-on workshops which teach you
 
 - Test-Driven Development (TDD)
 - [Clean-code](./src/main/resources/static/clean-code-checklist.pdf)
@@ -41,7 +41,7 @@ mock or stub external dependencies
 
 This workshop applies all the concept we have learnt about TDD, Clean-code, Test Double and Code Refactoring. You will practice refactoring an existing API endpoint
 
-- [Payment Broker](./src/main/java/com/krungsri/workshop/tdd/payment/instruction.md)
+- [Transaction Processing API](./src/main/java/com/krungsri/workshop/instruction.md)
 
 ---
 
