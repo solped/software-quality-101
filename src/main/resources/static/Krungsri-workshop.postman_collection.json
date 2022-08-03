@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "0524606f-4352-43dc-99c1-23024214c331",
+		"name": "Krungsri-workshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "process transactions",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"id\": 205,\n        \"type\": \"REFUND\",\n        \"status\": \"OPEN\",\n        \"method\": \"CREDIT_CARD\",\n        \"amount\": 263.83756489020374\n    },\n    {\n        \"id\": 520,\n        \"type\": \"REFUND\",\n        \"status\": \"CLOSED\",\n        \"method\": \"CRYPTO\",\n        \"amount\": 348.85164688293924\n    },\n    {\n        \"id\": 1091,\n        \"type\": \"PAYMENT\",\n        \"status\": \"CLOSED\",\n        \"method\": \"PAYPAL\",\n        \"amount\": 180.22367302918065\n    },\n    {\n        \"id\": 1098,\n        \"type\": \"PAYMENT\",\n        \"status\": \"OPEN\",\n        \"method\": \"CREDIT_CARD\",\n        \"amount\": 409.3930200664817\n    },\n    {\n        \"id\": 1446,\n        \"type\": \"REFUND\",\n        \"status\": \"OPEN\",\n        \"method\": \"CREDIT_CARD\",\n        \"amount\": 502.0215866610308\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
