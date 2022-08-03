@@ -1,7 +1,5 @@
 package com.krungsri.workshop.tdd.login;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.Map;
 
 public class LoginManagerImpl implements LoginManager {
@@ -15,6 +13,6 @@ public class LoginManagerImpl implements LoginManager {
     @Override
 
     public Boolean login(String username, String password) throws InvalidCredentialException, EmptyPasswordException {
-      throw new NotImplementedException();
+      throw new UnsupportedOperationException();
     }
 }

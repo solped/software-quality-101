@@ -1,6 +1,5 @@
 package com.krungsri.workshop.tdd.payment;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class PaymentBrokerImpl implements PaymentBroker {
     private final WalletInterface wallet;
@@ -13,6 +12,6 @@ public class PaymentBrokerImpl implements PaymentBroker {
 
     @Override
     public boolean pay(int amount) {
-       throw new NotImplementedException();
+       throw new UnsupportedOperationException();
     }
 }
