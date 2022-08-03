@@ -15,10 +15,10 @@ import java.util.stream.Collectors;
 @Component
 public class TransactionServiceImpl implements TransactionService {
 
-    private final TransactionProcessorAbstractFactory transactionProcessorFactory;
+    private final TransactionProcessorAbstractFactory transactionProcessorAbstractFactory;
 
-    public TransactionServiceImpl(TransactionProcessorAbstractFactory transactionProcessorFactory) {
-        this.transactionProcessorFactory = transactionProcessorFactory;
+    public TransactionServiceImpl(TransactionProcessorAbstractFactory transactionProcessorAbstractFactory) {
+        this.transactionProcessorAbstractFactory = transactionProcessorAbstractFactory;
     }
 
     @Override
@@ -33,7 +33,7 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     private void processTransaction(Transaction transaction) throws InvalidTransactionPaymentMethod, InvalidTransactionPaymentType {
-        transactionProcessorFactory
+        transactionProcessorAbstractFactory
                 .getProviderFactory(transaction.getType())
                 .getProcessor(transaction.getMethod())
                 .process(transaction);
