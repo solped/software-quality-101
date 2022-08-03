@@ -9,6 +9,6 @@ import org.springframework.stereotype.Component;
 public class CreditCardPaymentProvider implements PaymentProvider {
     @Override
     public void processPayment(Transaction transaction) {
-        log.info("Processing Credit Card" + transaction.getType().toString() + " for amount: " + transaction.getAmount());
+        log.info("Processing Credit Card Payment for amount: " + transaction.getAmount());
     }
 }

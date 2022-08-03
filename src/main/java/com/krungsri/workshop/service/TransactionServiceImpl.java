@@ -14,16 +14,26 @@ import java.util.List;
 @Component
 public class TransactionServiceImpl implements TransactionService {
 
-    private final CreditCardPaymentProvider creditCardPaymentClient;
-    private final PaypalPaymentProvider paypalPaymentClient;
-    private final CryptoPaymentProvider cryptoPaymentClient;
+    private final CreditCardPaymentProvider creditCardPaymentProvider;
+    private final PaypalPaymentProvider paypalPaymentProvider;
+    private final CryptoPaymentProvider cryptoPaymentProvider;
+    private final CreditCardRefundProvider creditCardRefundProvider;
+    private final PaypalRefundProvider paypalRefundProvider;
+    private final CryptoRefundProvider cryptoRefundProvider;
 
-    public TransactionServiceImpl(CreditCardPaymentProvider creditCardPaymentClient,
-                                  PaypalPaymentProvider paypalPaymentClient,
-                                  CryptoPaymentProvider cryptoPaymentClient) {
-        this.creditCardPaymentClient = creditCardPaymentClient;
-        this.paypalPaymentClient = paypalPaymentClient;
-        this.cryptoPaymentClient = cryptoPaymentClient;
+
+    public TransactionServiceImpl(CreditCardPaymentProvider creditCardPaymentProvider,
+                                  PaypalPaymentProvider paypalPaymentProvider,
+                                  CryptoPaymentProvider cryptoPaymentProvider,
+                                  CreditCardRefundProvider creditCardRefundProvider,
+                                  PaypalRefundProvider paypalRefundProvider,
+                                  CryptoRefundProvider cryptoRefundProvider) {
+        this.creditCardPaymentProvider = creditCardPaymentProvider;
+        this.paypalPaymentProvider = paypalPaymentProvider;
+        this.cryptoPaymentProvider = cryptoPaymentProvider;
+        this.creditCardRefundProvider = creditCardRefundProvider;
+        this.paypalRefundProvider = paypalRefundProvider;
+        this.cryptoRefundProvider = cryptoRefundProvider;
     }
 
     @Override
@@ -33,11 +43,11 @@ public class TransactionServiceImpl implements TransactionService {
                 if (transaction.getType() == PaymentType.PAYMENT) {
                     if (transaction.getStatus() == TransactionStatus.OPEN) {
                         if (transaction.getMethod() == PaymentMethod.CREDIT_CARD) {
-                            this.creditCardPaymentClient.processPayment(transaction);
+                            this.creditCardPaymentProvider.processPayment(transaction);
                         } else if (transaction.getMethod() == PaymentMethod.PAYPAL) {
-                            this.paypalPaymentClient.processPayment(transaction);
+                            this.paypalPaymentProvider.processPayment(transaction);
                         } else if (transaction.getMethod() == PaymentMethod.CRYPTO) {
-                            this.cryptoPaymentClient.processPayment(transaction);
+                            this.cryptoPaymentProvider.processPayment(transaction);
                         } else {
                             throw new InvalidTransactionPaymentMethod();
                         }
@@ -47,11 +57,11 @@ public class TransactionServiceImpl implements TransactionService {
                 } else if (transaction.getType() == PaymentType.REFUND) {
                     if (transaction.getStatus() == TransactionStatus.OPEN) {
                         if (transaction.getMethod() == PaymentMethod.CREDIT_CARD) {
-                            this.creditCardPaymentClient.processPayment(transaction);
+                            this.creditCardRefundProvider.processRefund(transaction);
                         } else if (transaction.getMethod() == PaymentMethod.PAYPAL) {
-                            this.paypalPaymentClient.processPayment(transaction);
+                            this.paypalRefundProvider.processRefund(transaction);
                         } else if (transaction.getMethod() == PaymentMethod.CRYPTO) {
-                            this.cryptoPaymentClient.processPayment(transaction);
+                            this.cryptoRefundProvider.processRefund(transaction);
                         } else {
                             throw new InvalidTransactionPaymentMethod();
                         }
