@@ -27,9 +27,7 @@ public class TransactionServiceImpl implements TransactionService {
             throw new NoTransactionProvided();
         }
         List<Transaction> openedTransactions = filterOpenTransactions(transactions);
-        for (Transaction transaction : openedTransactions) {
-            processTransaction(transaction);
-        }
+        for (Transaction transaction : openedTransactions) processTransaction(transaction);
     }
 
     private void processTransaction(Transaction transaction) throws InvalidTransactionPaymentMethod, InvalidTransactionPaymentType {
