@@ -16,7 +16,6 @@ class TransactionProcessorAbstractFactoryTest {
         TransactionProcessorAbstractFactory transactionProcessorAbstractFactory = new TransactionProcessorAbstractFactory();
 
         // when
-
         TransactionProcessorFactory providerFactory = transactionProcessorAbstractFactory.getProviderFactory(paymentType);
 
         // then
